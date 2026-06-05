@@ -1,134 +1,280 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuya Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Yuya Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Font Awesome（スキルアイコン用） -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Icons & Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Capriola">
 
-    <!-- AOS（スクロールアニメーション用） -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
-<!-- ナビゲーションバー -->
-<nav class="navbar">
-    <ul>
-        <li><a href="#about">自己紹介</a></li>
-        <li><a href="#skills">スキル</a></li>
-        <li><a href="#works">制作物</a></li>
-    </ul>
-</nav>
+<header>
+  <div class="navbar-fixed">
+    <nav class="teal lighten-2">
+      <div class="nav-wrapper container">
+        <a href="#top-banner-container" class="brand-logo">Hamada Yuya</a>
+        <a href="#" data-activates="nav-mobile" class="button-collapse">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#top-banner-container">トップ</a></li>
+          <li><a href="#about-this-site">このサイトについて</a></li>
+          <li><a href="#projects">制作物</a></li>
+          <li><a href="#skills">スキル</a></li>
+          <li><a href="#profile">プロフィール</a></li>
+          <li><a href="#contact">連絡先</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-<header data-aos="fade-down">
-    <h1>Yuya Hamada's Portfolio</h1>
-    <p>Infrastructure / Cloud / Web Development</p>
+  <ul id="nav-mobile" class="side-nav">
+    <li><a href="#top-banner-container">トップ</a></li>
+    <li><a href="#about-this-site">このサイトについて</a></li>
+    <li><a href="#projects">制作物</a></li>
+    <li><a href="#skills">スキル</a></li>
+    <li><a href="#profile">プロフィール</a></li>
+    <li><a href="#contact">連絡先</a></li>
+  </ul>
 </header>
 
-<div class="container">
-
-    <!-- プロフィール写真 -->
-    <div class="profile" data-aos="zoom-in">
-        <img src="images/profile.jpg" alt="profile">
+<!-- Top Banner -->
+<div id="top-banner-container" class="valign-wrapper top-banner">
+  <div class="container center">
+    <h1 class="header" data-aos="zoom-in" data-aos-duration="700">Hamada Yuya</h1>
+    <h5 data-aos="fade-up" data-aos-delay="250">Hamada Yuya Engineering Laboratory</h5>
+    <div class="scroll-to-bottom-btn" data-aos="fade-up" data-aos-delay="800">
+      <a href="#about-this-site"><i class="material-icons waves-effect waves-light">keyboard_arrow_down</i></a>
     </div>
-
-    <!-- 自己紹介 -->
-    <section id="about" data-aos="fade-up">
-        <h2>自己紹介</h2>
-        <div class="about glass-card">
-            <p>こんにちは、濱田 悠哉(はまだ ゆうや)です。インフラ運用・クラウド・Web開発を中心に学習と実務経験を積んでいます。</p>
-
-            <p>IT業界に興味を持ったきっかけは、身近なシステムトラブルを自分で調べて解決した経験でした。そこから「仕組みを理解して動かすこと」に魅力を感じ、インフラ領域を中心に学習を続けています。</p>
-
-            <p>現在は、AWS・Linux・Nginx を軸に、クラウド環境の基礎構築や Web サーバ運用を学びながら、実際に手を動かして技術を身につけています。また、Web 開発にも取り組み、デザイン・構築・公開まで一連の流れを経験しました。</p>
-
-            <p>今後は、クラウドとインフラの知識をさらに深め、安定したシステム運用や効率的な構築ができるエンジニアを目指しています。</p>
-
-            <hr>
-
-            <p><strong>名前：</strong>濱田 悠哉(はまだ ゆうや)</p>
-            <p><strong>拠点：</strong>兵庫県 神戸市</p>
-            <p><strong>得意分野：</strong>インフラ基礎構築、クラウド環境の学習、Web サイト制作</p>
-            <p><strong>現在の目標：</strong>AWS SAA の取得、クラウド・インフラの実務スキル強化</p>
-            <p><strong>資格：</strong>LinuCレベル1</p>
-
-        </div>
-    </section>
-
-    <!-- スキル -->
-    <section id="skills" data-aos="fade-up">
-        <h2>スキル</h2>
-        <div class="skills">
-
-            <div class="skill-box">
-                <i class="fa-brands fa-aws"></i>
-                <p><strong>AWS</strong></p>
-                <p>EC2 / S3 / IAM / VPC の基礎構築、セキュリティグループ設定、キーペア管理、静的サイト公開などを経験。SAA 取得に向けて学習中。</p>
-            </div>
-
-            <div class="skill-box">
-                <i class="fa-brands fa-linux"></i>
-                <p><strong>Linux（AlmaLinux）</strong></p>
-                <p>ユーザー管理、パーミッション設定、ファイル操作、systemctl によるサービス管理、ログ確認など基本操作を習得。</p>
-            </div>
-
-            <div class="skill-box">
-                <i class="fa-solid fa-server"></i>
-                <p><strong>Nginx</strong></p>
-                <p>静的サイト公開、ドキュメントルート設定、リバースプロキシの基礎、設定ファイルの編集と再読み込み、ログ解析を経験。</p>
-            </div>
-
-            <div class="skill-box">
-                <i class="fa-solid fa-code"></i>
-                <p><strong>HTML / CSS</strong></p>
-                <p>レスポンシブ対応、ガラスモーフィズムデザイン、アニメーション、グリッドレイアウト、AOS を使った動きのある UI を制作。</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- 制作物 -->
-    <section id="works" data-aos="fade-up">
-        <h2>制作物</h2>
-        <div class="works">
-
-            <div class="work-item">
-                
-                <div>
-                    <h3>ポートフォリオサイト</h3>
-                    <p>HTML / CSS を使用して制作した個人ポートフォリオです。ガラスモーフィズムやネオンエフェクトを取り入れ、背景画像との調和を意識したデザインに仕上げました。</p>
-                    <p>ナビゲーションバー、プロフィール写真、作品詳細ページなどの機能を実装し、ユーザーが見やすく操作しやすい構成を意識しています。レスポンシブ対応やアニメーションも取り入れ、デザイン性と使いやすさの両立を目指しました。</p>
-                    <a class="detail-btn" href="works/portfolio.html">詳細を見る</a>
-                </div>
-            </div>
-
-            <div class="work-item">
-                
-                <div>
-                    <h3>Nginx Web サーバ構築</h3>
-                    <p>AlmaLinux 上に Nginx を構築し、静的 Web サイトを公開しました。ドキュメントルートの設定、ファイアウォールの調整、SELinux の確認、systemctl によるサービス管理など、Web サーバ運用の基本を実践的に学びました。</p>
-                    <p>また、ログの確認や設定ファイルの編集を通して、トラブルシューティングの基礎も経験しています。</p>
-                    <a class="detail-btn" href="works/nginx.html">詳細を見る</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
+  </div>
 </div>
 
-<footer data-aos="fade-up">
-    <p>現在の学習：AWS（SAA）、Linux 基本操作、Nginx、Web サイト制作</p>
-    <p>© 2026 Yuya Portfolio</p>
+<!-- About this site -->
+<section id="about-this-site" class="section">
+  <div class="container">
+    <h2 class="center grey-text text-darken-3">About this site</h2>
+    <p class="center grey-text text-darken-3">
+      ここはエンジニア悠哉のポートフォリオサイトです。<br>
+      これまでに手がけた制作物、身につけたスキルをまとめています。<br>
+      お茶でも飲みながらごゆるりとご覧ください。
+    </p>
+  </div>
+</section>
+
+<!-- About me -->
+<section id="about-me" class="section">
+  <div class="container">
+    <h2 class="center">About me</h2>
+    <div class="row">
+      <div class="col s12 m3 offset-m2 center">
+        <img src="images/profile.png" alt="プロフィール画像" width="150" height="150" class="circle responsive-img" data-aos="zoom-in">
+      </div>
+      <div class="col s12 m5">
+        <p>
+          神戸市在住のインフラ・クラウドエンジニア。<br>
+          Linuxサーバ構築、NginxによるWeb公開、GitHub Pagesでのサイト運用などを実践しています。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Works -->
+<section id="projects" class="section">
+  <div class="container">
+    <h3 class="center">Works</h3>
+    <p class="center">これまでに構築した環境や制作物を紹介します。</p>
+
+    <div class="row">
+
+      <!-- Nginx -->
+      <div class="col s12 m4" data-aos="fade-up">
+        <a class="modal-trigger" href="#modal-nginx">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img src="works/webserver1.png" alt="Nginx">
+            </div>
+            <div class="card-content center">
+              <span class="card-title">Nginx Webサーバ構築</span>
+              <p>AlmaLinux上にNginxを構築し、自作HTMLを公開。</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Portfolio -->
+      <div class="col s12 m4" data-aos="fade-up" data-aos-delay="150">
+        <a class="modal-trigger" href="#modal-portfolio">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img src="works/hoda_portfolio.jpg" alt="Portfolio">
+            </div>
+            <div class="card-content center">
+              <span class="card-title">ポートフォリオサイト</span>
+              <p>HTML/CSSで作成し、GitHub Pagesで公開予定。</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- AWS -->
+      <div class="col s12 m4" data-aos="fade-up" data-aos-delay="300">
+        <a class="modal-trigger" href="#modal-aws">
+          <div class="card hoverable">
+            <div class="card-image">
+              <img src="works/aws.png" alt="AWS">
+            </div>
+            <div class="card-content center">
+              <span class="card-title">AWS学習ログ</span>
+              <p>EC2/VPC/S3を中心に検証環境を構築。</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="section">
+  <div class="container">
+    <h3 class="center">My skill set</h3>
+    <p class="center">修練のすえ身につけたスキルをまとめました。</p>
+
+    <div class="row">
+      <div class="col s12 m4" data-aos="zoom-in">
+        <h5 class="center">Linux / サーバ</h5>
+        <ul class="collection grey-text text-darken-2">
+          <li>AlmaLinux / CentOS</li>
+          <li>Nginx</li>
+          <li>systemctl / firewalld</li>
+        </ul>
+      </div>
+
+      <div class="col s12 m4" data-aos="zoom-in" data-aos-delay="200">
+        <h5 class="center">Web</h5>
+        <ul class="collection grey-text text-darken-2">
+          <li>HTML / CSS</li>
+          <li>レスポンシブ対応</li>
+          <li>GitHub Pages</li>
+        </ul>
+      </div>
+
+      <div class="col s12 m4" data-aos="zoom-in" data-aos-delay="400">
+        <h5 class="center">Cloud / Others</h5>
+        <ul class="collection grey-text text-darken-2">
+          <li>AWS（EC2 / VPC / S3）</li>
+          <li>Python（基礎）</li>
+          <li>ネットワーク基礎</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Profile Timeline -->
+<section id="profile" class="section">
+  <div class="container">
+    <h2 class="center">Profile</h2>
+
+    <div class="timeline">
+      <div class="timeline-item" data-aos="fade-left"><span class="year">2000~</span><p>神戸の田舎町で産声を上げる。</p></div>
+      <div class="timeline-item" data-aos="fade-left"><span class="year">2009~</span><p>小学生から高校まで野球をやり、協調性を高める。</p></div>
+      <div class="timeline-item" data-aos="fade-left"><span class="year">2019~</span><p>大学でビジネス法について学ぶ。</p></div>
+      <div class="timeline-item" data-aos="fade-left"><span class="year">2023~</span><p>携帯電話の法人向け営業として働き始める。</p></div>
+      <div class="timeline-item" data-aos="fade-left"><span class="year">2024~</span><p>ITインフラに興味を持ち、IT業界への転職を決意。</p></div>
+      <div class="timeline-item" data-aos="fade-left"><span class="year">2026~</span><p>インフラ・クラウド構築を中心に学習を継続。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2 class="center">Contact</h2>
+    <p class="center">
+      制作物や学習ログに関するお問い合わせは、今後 GitHub にて公開予定です。
+    </p>
+  </div>
+</section>
+
+<footer class="page-footer teal lighten-2">
+  <div class="container center white-text">
+    <p>Thank you for coming!</p>
+    <p>© 2026 Hamada Yuya</p>
+  </div>
 </footer>
 
-<!-- AOS（スクロールアニメーション） -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Modal: Nginx -->
+<div id="modal-nginx" class="modal">
+  <div class="modal-content">
+    <h4>Nginx Webサーバ構築</h4>
+    <p>
+      AlmaLinux 上に Nginx を構築し、自作 HTML を公開した学習成果です。<br>
+      firewalld の設定、systemctl によるサービス管理など、基本的なサーバ構築の流れを理解しました。
+    </p>
+    <img src="works/webserver1.png" class="responsive-img" alt="Nginx">
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">閉じる</a>
+  </div>
+</div>
+
+<!-- Modal: Portfolio -->
+<div id="modal-portfolio" class="modal">
+  <div class="modal-content">
+    <h4>ポートフォリオサイト</h4>
+    <p>
+      HTML/CSS を用いて制作したポートフォリオサイトです。<br>
+      GitHub Pages で公開予定で、レスポンシブ対応や UI の統一感を意識して制作しました。
+    </p>
+    <img src="works/hoda_portfolio.jpg" class="responsive-img" alt="Portfolio">
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">閉じる</a>
+  </div>
+</div>
+
+<!-- Modal: AWS -->
+<div id="modal-aws" class="modal">
+  <div class="modal-content">
+    <h4>AWS学習ログ</h4>
+    <p>
+      EC2 / VPC / S3 を中心に学習した内容をまとめています。<br>
+      小規模な検証環境を構築し、ネットワークやセキュリティグループの理解を深めました。
+    </p>
+    <img src="works/aws.png" class="responsive-img" alt="AWS">
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">閉じる</a>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
 <script>
-  AOS.init();
+  $(function() {
+    $(".button-collapse").sideNav();
+    $(".collapsible").collapsible();
+    $('.modal').modal();
+    AOS.init();
+  });
 </script>
 
 </body>
