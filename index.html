@@ -24,7 +24,7 @@
   <div class="navbar-fixed">
     <nav class="teal lighten-2">
       <div class="nav-wrapper container">
-        <a href="#top-banner-container" class="brand-logo">Hamada Yuya</a>
+        <a href="#top-banner-container" class="brand-logo">Yuya</a>
         <a href="#" data-activates="nav-mobile" class="button-collapse">
           <i class="material-icons">menu</i>
         </a>
@@ -66,7 +66,7 @@
   <div class="container">
     <h2 class="center grey-text text-darken-3">About this site</h2>
     <p class="center grey-text text-darken-3">
-      ここはエンジニア悠哉のポートフォリオサイトです。<br>
+      ここはエンジニア濱田 悠哉のポートフォリオサイトです。<br>
       これまでに手がけた制作物、身につけたスキルをまとめています。<br>
       お茶でも飲みながらごゆるりとご覧ください。
     </p>
@@ -148,39 +148,39 @@
   </div>
 </section>
 
-<!-- Skills -->
+<!-- Skills（完全統合版） -->
 <section id="skills" class="section">
   <div class="container">
-    <h3 class="center">My skill set</h3>
-    <p class="center">修練のすえ身につけたスキルをまとめました。</p>
+    <h2 class="center">My skill set</h2>
+    <p class="center">
+      修練のすえ身につけたスキルをグラフィカルにまとめました。<br>
+      フロントエンド・バックエンド・DevOps の3領域で整理しています。
+    </p>
 
     <div class="row">
-      <div class="col s12 m4" data-aos="zoom-in">
-        <h5 class="center">Linux / サーバ</h5>
-        <ul class="collection grey-text text-darken-2">
-          <li>AlmaLinux / CentOS</li>
-          <li>Nginx</li>
-          <li>systemctl / firewalld</li>
-        </ul>
+      <div class="col s12 m4">
+        <h5 class="center red-text">Front-end</h5>
+        <canvas id="frontendChart"></canvas>
       </div>
+      <div class="col s12 m4">
+        <h5 class="center blue-text">Back-end</h5>
+        <canvas id="backendChart"></canvas>
+      </div>
+      <div class="col s12 m4">
+        <h5 class="center orange-text">DevOps</h5>
+        <canvas id="devopsChart"></canvas>
+      </div>
+    </div>
 
-      <div class="col s12 m4" data-aos="zoom-in" data-aos-delay="200">
-        <h5 class="center">Web</h5>
-        <ul class="collection grey-text text-darken-2">
-          <li>HTML / CSS</li>
-          <li>レスポンシブ対応</li>
-          <li>GitHub Pages</li>
-        </ul>
-      </div>
-
-      <div class="col s12 m4" data-aos="zoom-in" data-aos-delay="400">
-        <h5 class="center">Cloud / Others</h5>
-        <ul class="collection grey-text text-darken-2">
-          <li>AWS（EC2 / VPC / S3）</li>
-          <li>Python（基礎）</li>
-          <li>ネットワーク基礎</li>
-        </ul>
-      </div>
+    <div class="center" style="margin-top:40px;">
+      <h6>スキルレベルの目安：</h6>
+      <p>
+        5 - Super Saiyan<br>
+        4 - Ninja<br>
+        3 - Stand Master<br>
+        2 - I can use it a little.<br>
+        1 - Beginner
+      </p>
     </div>
   </div>
 </section>
@@ -263,6 +263,74 @@
   </div>
 </div>
 
+<!-- Chart.js 読み込み -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- レーダーチャート描画コード -->
+<script>
+  const radarOptions = {
+    scales: {
+      r: {
+        min: 0,
+        max: 5,
+        ticks: { stepSize: 1 },
+        grid: { color: "#ddd" },
+        angleLines: { color: "#ccc" },
+        pointLabels: { font: { size: 12 } }
+      }
+    },
+    plugins: { legend: { display: false } }
+  };
+
+  // Front-end
+  new Chart(document.getElementById("frontendChart"), {
+    type: "radar",
+    data: {
+      labels: ["HTML/CSS", "JavaScript", "jQuery", "Vue.js/Vue CLI", "CSS FW", "WordPress"],
+      datasets: [{
+        label: "Front-end",
+        data: [4, 3, 2, 4, 2, 3],
+        backgroundColor: "rgba(255,99,132,0.2)",
+        borderColor: "rgba(255,99,132,1)",
+        pointBackgroundColor: "rgba(255,99,132,1)"
+      }]
+    },
+    options: radarOptions
+  });
+
+  // Back-end
+  new Chart(document.getElementById("backendChart"), {
+    type: "radar",
+    data: {
+      labels: ["Python", "Django", "Go", "PostgreSQL", "MySQL", "Nginx"],
+      datasets: [{
+        label: "Back-end",
+        data: [4, 3, 2, 3, 2, 3],
+        backgroundColor: "rgba(54,162,235,0.2)",
+        borderColor: "rgba(54,162,235,1)",
+        pointBackgroundColor: "rgba(54,162,235,1)"
+      }]
+    },
+    options: radarOptions
+  });
+
+  // DevOps
+  new Chart(document.getElementById("devopsChart"), {
+    type: "radar",
+    data: {
+      labels: ["Linux", "AWS", "Git/GitHub", "Vim", "Docker", "Docker Compose"],
+      datasets: [{
+        label: "DevOps",
+        data: [3, 2, 2, 3, 3, 2],
+        backgroundColor: "rgba(255,159,64,0.2)",
+        borderColor: "rgba(255,159,64,1)",
+        pointBackgroundColor: "rgba(255,159,64,1)"
+      }]
+    },
+    options: radarOptions
+  });
+</script>
+
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
@@ -279,3 +347,4 @@
 
 </body>
 </html>
+
